@@ -6,11 +6,29 @@ import sys
 import argparse
 
 def get_system_info():
+    processor = platform.processor()
+    if not processor:
+        try:
+            if platform.system() == "Linux":
+                with open("/proc/cpuinfo", "r") as f:
+                    for line in f:
+                        if "model name" in line:
+                            processor = line.split(":")[1].strip()
+                            break
+            elif platform.system() == "Windows":
+                import subprocess
+                result = subprocess.run(["wmic", "cpu", "get", "name"], capture_output=True, text=True)
+                lines = result.stdout.strip().split("\n")
+                if len(lines) > 1:
+                    processor = lines[1].strip()
+        except:
+            processor = "Unknown"
+    
     return {
         "os": platform.system(),
         "release": platform.release(),
         "python": platform.python_version(),
-        "processor": platform.processor(),
+        "processor": processor or "Unknown",
     }
 
 def run_benchmark(command, name, n, steps):
