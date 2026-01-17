@@ -1,0 +1,34 @@
+{
+  "system": {
+    "os": "Linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.11.14",
+    "processor": ""
+  },
+  "benchmarks": [
+    {
+      "method": "C (Native)",
+      "n": 100,
+      "steps": 50,
+      "time": 0.0034
+    },
+    {
+      "method": "C++ (Native)",
+      "n": 100,
+      "steps": 50,
+      "time": 0.00370857
+    },
+    {
+      "method": "C (Native)",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.3752
+    },
+    {
+      "method": "C++ (Native)",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.413726
+    }
+  ]
+}

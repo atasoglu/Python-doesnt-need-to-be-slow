@@ -1,0 +1,22 @@
+{
+  "system": {
+    "os": "Linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.11.14",
+    "processor": ""
+  },
+  "benchmarks": [
+    {
+      "method": "Rust (Native)",
+      "n": 100,
+      "steps": 50,
+      "time": 0.0839
+    },
+    {
+      "method": "Rust (Native)",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.1341
+    }
+  ]
+}

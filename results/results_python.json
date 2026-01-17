@@ -1,0 +1,82 @@
+{
+  "system": {
+    "os": "Linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.11.14",
+    "processor": ""
+  },
+  "benchmarks": [
+    {
+      "method": "Vanilla Python",
+      "n": 100,
+      "steps": 50,
+      "time": 0.2734651565551758
+    },
+    {
+      "method": "NumPy",
+      "n": 100,
+      "steps": 50,
+      "time": 0.04417228698730469
+    },
+    {
+      "method": "Numba",
+      "n": 100,
+      "steps": 50,
+      "time": 0.024773359298706055
+    },
+    {
+      "method": "Taichi",
+      "n": 100,
+      "steps": 50,
+      "time": 0.0376429557800293
+    },
+    {
+      "method": "Cython",
+      "n": 100,
+      "steps": 50,
+      "time": 0.0033342838287353516
+    },
+    {
+      "method": "Multiprocessing",
+      "n": 100,
+      "steps": 50,
+      "time": 35.55902624130249
+    },
+    {
+      "method": "Vanilla Python",
+      "n": 1000,
+      "steps": 50,
+      "time": 23.732014894485474
+    },
+    {
+      "method": "NumPy",
+      "n": 1000,
+      "steps": 50,
+      "time": 5.328285217285156
+    },
+    {
+      "method": "Numba",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.09717392921447754
+    },
+    {
+      "method": "Taichi",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.22115492820739746
+    },
+    {
+      "method": "Cython",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.3379654884338379
+    },
+    {
+      "method": "Multiprocessing",
+      "n": 1000,
+      "steps": 50,
+      "time": 5.511844635009766
+    }
+  ]
+}

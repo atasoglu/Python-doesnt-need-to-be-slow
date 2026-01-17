@@ -1,0 +1,7 @@
+numpy
+numba
+cython
+taichi
+maturin
+patchelf
+tbb
