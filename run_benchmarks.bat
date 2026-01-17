@@ -23,7 +23,7 @@ if "%SHOULD_BUILD%"=="0" (
     echo Image nbody-python found, skipping build.
 ) else (
     echo Building nbody-python...
-    docker build -f docker/Dockerfile.python -t nbody-python .
+    docker build -f docker/python.Dockerfile -t nbody-python .
     if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 )
 docker run --rm -v %cd%/results:/app/results nbody-python
@@ -44,7 +44,7 @@ if "%SHOULD_BUILD%"=="0" (
     echo Image nbody-c-cpp found, skipping build.
 ) else (
     echo Building nbody-c-cpp...
-    docker build -f docker/Dockerfile.c_cpp -t nbody-c-cpp .
+    docker build -f docker/c_cpp.Dockerfile -t nbody-c-cpp .
     if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 )
 docker run --rm -v %cd%/results:/app/results nbody-c-cpp
@@ -65,7 +65,7 @@ if "%SHOULD_BUILD%"=="0" (
     echo Image nbody-rust found, skipping build.
 ) else (
     echo Building nbody-rust...
-    docker build -f docker/Dockerfile.rust -t nbody-rust .
+    docker build -f docker/rust.Dockerfile -t nbody-rust .
     if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 )
 docker run --rm -v %cd%/results:/app/results nbody-rust

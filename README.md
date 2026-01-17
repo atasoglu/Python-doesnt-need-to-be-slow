@@ -61,7 +61,7 @@ We have Dockerfiles for each environment to ensure reproducibility.
 **Rust Implementation:**
 ```bash
 # Build the image (uses multi-stage build)
-docker build -f docker/Dockerfile.rust -t nbody-rust .
+docker build -f docker/rust.Dockerfile -t nbody-rust .
 
 # Run the benchmark
 docker run --rm nbody-rust
@@ -70,7 +70,7 @@ docker run --rm nbody-rust
 **Python Implementations:**
 ```bash
 # Build
-docker build -f docker/Dockerfile.python -t nbody-python .
+docker build -f docker/python.Dockerfile -t nbody-python .
 
 # Run
 docker run --rm nbody-python

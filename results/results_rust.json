@@ -10,13 +10,13 @@
       "method": "Rust (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0839
+      "time": 0.1009
     },
     {
       "method": "Rust (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.1341
+      "time": 0.1462
     }
   ]
 }

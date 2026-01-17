@@ -10,25 +10,25 @@
       "method": "C (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0034
+      "time": 0.0038
     },
     {
       "method": "C++ (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.00370857
+      "time": 0.00389286
     },
     {
       "method": "C (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.3752
+      "time": 0.3582
     },
     {
       "method": "C++ (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.413726
+      "time": 0.370637
     }
   ]
 }
