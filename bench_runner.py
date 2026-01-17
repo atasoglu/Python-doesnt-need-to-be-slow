@@ -108,6 +108,7 @@ if __name__ == "__main__":
         (["python", "src/python/taichi_impl.py"], "Taichi", "python"),
         (["python", "src/python/cython_runner.py"], "Cython", "python"),
         (["python", "src/python/mypyc_runner.py"], "MyPyc", "python"),
+        (["python", "src/python/cuda_impl.py"], "CUDA Python", "python"),
         (["python", "src/python/mp_impl.py"], "Multiprocessing", "python"),
         (["pypy3", "src/python/baseline.py"], "PyPy", "python"),
         # Native binaries

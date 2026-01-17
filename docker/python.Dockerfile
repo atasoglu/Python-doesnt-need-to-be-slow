@@ -5,13 +5,16 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH="/app:/app/src/python"
 
 # Runtime deps for Taichi and build deps for Cython
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Enable non-free repositories for nvidia-cuda-toolkit
+RUN sed -i 's/main/main contrib non-free non-free-firmware/' /etc/apt/sources.list.d/debian.sources && \
+    apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-dev \
     libtbb-dev \
     libx11-6 \
     libgl1 \
     pypy3 \
+    nvidia-cuda-toolkit \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

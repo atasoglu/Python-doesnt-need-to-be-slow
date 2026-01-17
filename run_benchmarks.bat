@@ -26,7 +26,7 @@ if "%SHOULD_BUILD%"=="0" (
     docker build -f docker/python.Dockerfile -t nbody-python .
     if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 )
-docker run --rm -v %cd%/results:/app/results nbody-python
+docker run --gpus all --rm -v %cd%/results:/app/results nbody-python
 
 echo.
 echo ==========================================

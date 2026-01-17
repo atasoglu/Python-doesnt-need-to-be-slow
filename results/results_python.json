@@ -3,116 +3,130 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": "AMD Ryzen 7 6800H with Radeon Graphics"
+    "processor": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU, 6144 MiB",
+    "cuda_version": "Cuda compilation tools, release 11.8, V11.8.89"
   },
   "benchmarks": [
     {
       "method": "Vanilla Python",
       "n": 100,
       "steps": 50,
-      "time": 0.12132883071899414
+      "time": 0.21840310096740723
     },
     {
       "method": "NumPy",
       "n": 100,
       "steps": 50,
-      "time": 0.022157907485961914
+      "time": 0.04395866394042969
     },
     {
       "method": "Numba",
       "n": 100,
       "steps": 50,
-      "time": 0.004675388336181641
+      "time": 0.008685111999511719
     },
     {
       "method": "JAX",
       "n": 100,
       "steps": 50,
-      "time": 0.06498026847839355
+      "time": 0.11672616004943848
     },
     {
       "method": "Taichi",
       "n": 100,
       "steps": 50,
-      "time": 0.014923572540283203
+      "time": 0.04786229133605957
     },
     {
       "method": "Cython",
       "n": 100,
       "steps": 50,
-      "time": 0.001737833023071289
+      "time": 0.0061681270599365234
     },
     {
       "method": "MyPyc",
       "n": 100,
       "steps": 50,
-      "time": 0.11927604675292969
+      "time": 0.2270500659942627
+    },
+    {
+      "method": "CUDA Python",
+      "n": 100,
+      "steps": 50,
+      "time": 0.011020183563232422
     },
     {
       "method": "Multiprocessing",
       "n": 100,
       "steps": 50,
-      "time": 0.25636959075927734
+      "time": 0.5195612907409668
     },
     {
       "method": "PyPy",
       "n": 100,
       "steps": 50,
-      "time": 0.00937342643737793
+      "time": 0.01584339141845703
     },
     {
       "method": "Vanilla Python",
       "n": 1000,
       "steps": 50,
-      "time": 12.789600849151611
+      "time": 23.805495023727417
     },
     {
       "method": "NumPy",
       "n": 1000,
       "steps": 50,
-      "time": 3.1816647052764893
+      "time": 5.833648920059204
     },
     {
       "method": "Numba",
       "n": 1000,
       "steps": 50,
-      "time": 0.03651309013366699
+      "time": 0.10117030143737793
     },
     {
       "method": "JAX",
       "n": 1000,
       "steps": 50,
-      "time": 0.17338132858276367
+      "time": 0.35595011711120605
     },
     {
       "method": "Taichi",
       "n": 1000,
       "steps": 50,
-      "time": 0.11825728416442871
+      "time": 0.2126636505126953
     },
     {
       "method": "Cython",
       "n": 1000,
       "steps": 50,
-      "time": 0.1685175895690918
+      "time": 0.368833065032959
     },
     {
       "method": "MyPyc",
       "n": 1000,
       "steps": 50,
-      "time": 12.727739095687866
+      "time": 23.199541568756104
+    },
+    {
+      "method": "CUDA Python",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.19476032257080078
     },
     {
       "method": "Multiprocessing",
       "n": 1000,
       "steps": 50,
-      "time": 3.321455955505371
+      "time": 5.200041770935059
     },
     {
       "method": "PyPy",
       "n": 1000,
       "steps": 50,
-      "time": 0.4036550521850586
+      "time": 0.7267904281616211
     }
   ]
 }

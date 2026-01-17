@@ -12,13 +12,13 @@
       "method": "CUDA",
       "n": 100,
       "steps": 50,
-      "time": 0.13
+      "time": 0.3147
     },
     {
       "method": "CUDA",
       "n": 1000,
       "steps": 50,
-      "time": 0.0098
+      "time": 0.0167
     }
   ]
 }

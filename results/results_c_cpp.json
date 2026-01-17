@@ -3,32 +3,34 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": "AMD Ryzen 7 6800H with Radeon Graphics"
+    "processor": "AMD Ryzen 7 6800H with Radeon Graphics",
+    "gpu": "No GPU detected (nvidia-smi not found)",
+    "cuda_version": "Unknown (nvcc not found)"
   },
   "benchmarks": [
     {
       "method": "C (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0017
+      "time": 0.0031
     },
     {
       "method": "C++ (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.00209999
+      "time": 0.00314449
     },
     {
       "method": "C (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.1757
+      "time": 0.3726
     },
     {
       "method": "C++ (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.173924
+      "time": 0.334643
     }
   ]
 }
