@@ -1,7 +1,8 @@
 use std::env;
 use std::time::Instant;
+use rand::SeedableRng;
 use rand::Rng;
-use rayon::prelude::*;
+use rand::rngs::StdRng;
 
 #[derive(Clone, Copy)]
 struct Planet {
@@ -11,9 +12,10 @@ struct Planet {
 }
 
 fn run_simulation_rust(n_bodies: usize, n_steps: usize, dt: f64) {
-    let mut rng = rand::thread_rng();
+    // Deterministic RNG
+    let mut rng = StdRng::seed_from_u64(42);
     
-    // Structure of Arrays (SoA) for better SIMD/Cache
+    // Structure of Arrays (SoA) for better SIMD/Cache matches usage
     let mut x: Vec<f64> = (0..n_bodies).map(|_| rng.gen_range(-100.0..100.0)).collect();
     let mut y: Vec<f64> = (0..n_bodies).map(|_| rng.gen_range(-100.0..100.0)).collect();
     let mut z: Vec<f64> = (0..n_bodies).map(|_| rng.gen_range(-100.0..100.0)).collect();
@@ -26,9 +28,12 @@ fn run_simulation_rust(n_bodies: usize, n_steps: usize, dt: f64) {
     let soft_epsilon = 1e-9;
 
     for _ in 0..n_steps {
-        // Compute forces
-        // Rayon parallel iterator
-        let forces: Vec<(f64, f64, f64)> = (0..n_bodies).into_par_iter().map(|i| {
+        // PERF: Single-threaded implementation to be fair against C/C++
+        // We compute all forces first, then update velocities/positions
+        
+        let mut forces: Vec<(f64, f64, f64)> = Vec::with_capacity(n_bodies);
+
+        for i in 0..n_bodies {
             let mut fx = 0.0;
             let mut fy = 0.0;
             let mut fz = 0.0;
@@ -51,8 +56,8 @@ fn run_simulation_rust(n_bodies: usize, n_steps: usize, dt: f64) {
                 fy += f * dy;
                 fz += f * dz;
             }
-            (fx, fy, fz)
-        }).collect();
+            forces.push((fx, fy, fz));
+        }
         
         // Update velocity and position
         for i in 0..n_bodies {
