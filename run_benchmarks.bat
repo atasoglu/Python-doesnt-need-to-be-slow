@@ -93,6 +93,27 @@ docker run --rm -v %cd%/results:/app/results nbody-go
 
 echo.
 echo ==========================================
+echo Building and Running CUDA Benchmarks...
+echo ==========================================
+set SHOULD_BUILD=0
+if "%FORCE_BUILD%"=="1" (
+    set SHOULD_BUILD=1
+) else (
+    docker image inspect nbody-cuda >nul 2>&1
+    if %ERRORLEVEL% NEQ 0 set SHOULD_BUILD=1
+)
+
+if "%SHOULD_BUILD%"=="0" (
+    echo Image nbody-cuda found, skipping build.
+) else (
+    echo Building nbody-cuda...
+    docker build -f docker/cuda.Dockerfile -t nbody-cuda .
+    if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+)
+docker run --gpus all --rm -v %cd%/results:/app/results nbody-cuda
+
+echo.
+echo ==========================================
 echo All Benchmarks Completed!
 echo Results saved to results/latest_run.json
 echo ==========================================

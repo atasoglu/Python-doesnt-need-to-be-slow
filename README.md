@@ -53,6 +53,25 @@ These serve as the "speed limit" to see how close our Python optimizations can g
 - **C++**
 - **Go**
 
+### GPU/CUDA Implementation
+
+- **CUDA C++**
+  - Explicit GPU parallelization using NVIDIA CUDA
+  - Requires NVIDIA GPU with Compute Capability 3.5+
+  - *Pros*: Massive parallelization, 10-100x speedup for large N
+  - *Cons*: Requires NVIDIA GPU, complex memory management
+
+#### GPU Requirements
+- NVIDIA GPU with CUDA support
+- CUDA Toolkit 11.0+
+- Docker with nvidia-docker2 support
+
+#### Running with GPU:
+```bash
+# Requires --gpus flag
+docker run --gpus all nbody-cuda
+```
+
 ## How to Run
 
 > **Note:** Ensure you have Docker installed on your machine to run the benchmarks seamlessly.

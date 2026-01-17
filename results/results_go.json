@@ -10,13 +10,13 @@
       "method": "Go (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0031
+      "time": 0.0029
     },
     {
       "method": "Go (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.2946
+      "time": 0.3065
     }
   ]
 }

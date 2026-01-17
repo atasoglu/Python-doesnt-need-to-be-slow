@@ -4,6 +4,33 @@ import platform
 import os
 import sys
 import argparse
+import shutil
+
+def get_gpu_info():
+    try:
+        # Check if nvidia-smi exists
+        if not shutil.which("nvidia-smi"):
+             return "No GPU detected (nvidia-smi not found)"
+        
+        result = subprocess.run(["nvidia-smi", "--query-gpu=name,memory.total", 
+                               "--format=csv,noheader"], capture_output=True, text=True)
+        return result.stdout.strip()
+    except Exception as e:
+        return f"GPU Check Failed: {str(e)}"
+
+def get_cuda_version():
+    try:
+        # Check if nvcc exists
+        if not shutil.which("nvcc"):
+            return "Unknown (nvcc not found)"
+
+        result = subprocess.run(["nvcc", "--version"], capture_output=True, text=True)
+        for line in result.stdout.splitlines():
+            if "release" in line:
+                return line.strip()
+        return "Unknown"
+    except:
+        return "Unknown"
 
 def get_system_info():
     processor = platform.processor()
@@ -29,6 +56,8 @@ def get_system_info():
         "release": platform.release(),
         "python": platform.python_version(),
         "processor": processor or "Unknown",
+        "gpu": get_gpu_info(),
+        "cuda_version": get_cuda_version(),
     }
 
 def run_benchmark(command, name, n, steps):
@@ -60,7 +89,7 @@ def run_benchmark(command, name, n, steps):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run N-body benchmarks")
-    parser.add_argument("--type", choices=["all", "python", "c_cpp", "rust", "go"], default="all", help="Type of benchmarks to run")
+    parser.add_argument("--type", choices=["all", "python", "c_cpp", "rust", "go", "cuda"], default="all", help="Type of benchmarks to run")
     parser.add_argument("--n", type=int, nargs="+", default=[100, 1000], help="N values to test")
     parser.add_argument("--steps", type=int, default=50, help="Number of steps")
     args = parser.parse_args()
@@ -86,6 +115,7 @@ if __name__ == "__main__":
         (["src/c_impl/nbody.exe"] if os.name == 'nt' else ["./src/c_impl/nbody"], "C (Native)", "c_cpp"),
         (["src/cpp_impl/nbody.exe"] if os.name == 'nt' else ["./src/cpp_impl/nbody"], "C++ (Native)", "c_cpp"),
         (["src/go_impl/nbody_go.exe"] if os.name == 'nt' else ["./src/go_impl/nbody_go"], "Go (Native)", "go"),
+        (["src/cuda_impl/nbody_cuda.exe"] if os.name == 'nt' else ["./src/cuda_impl/nbody_cuda"], "CUDA", "cuda"),
     ]
     
     # Filter implementations

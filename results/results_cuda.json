@@ -1,0 +1,24 @@
+{
+  "system": {
+    "os": "Linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.10.12",
+    "processor": "x86_64",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU, 6144 MiB",
+    "cuda_version": "Unknown (nvcc not found)"
+  },
+  "benchmarks": [
+    {
+      "method": "CUDA",
+      "n": 100,
+      "steps": 50,
+      "time": 0.13
+    },
+    {
+      "method": "CUDA",
+      "n": 1000,
+      "steps": 50,
+      "time": 0.0098
+    }
+  ]
+}

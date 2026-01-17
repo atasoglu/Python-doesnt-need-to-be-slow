@@ -16,19 +16,19 @@
       "method": "C++ (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.00170622
+      "time": 0.00209999
     },
     {
       "method": "C (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.171
+      "time": 0.1757
     },
     {
       "method": "C++ (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.164342
+      "time": 0.173924
     }
   ]
 }
