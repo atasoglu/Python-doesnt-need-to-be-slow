@@ -59,6 +59,26 @@ Use the runner script to execute all benchmarks.
 
 To force rebuild all Docker images, use the `--force` flag.
 
+## Results
+
+After running the benchmarks, you can analyze the results using our analysis script:
+
+```bash
+python analysis.py
+```
+
+This generates performance comparison charts in the `figures/` directory.
+
+### Performance Comparison
+
+![Execution Time](figures/execution_time.png)
+
+*Execution time comparison across different methods and problem sizes (N-body count)*
+
+![Speedup Factor](figures/speedup_factor.png)
+
+*Speedup factor relative to vanilla Python implementation*
+
 ---
 
 *Happy Optimizing!*
