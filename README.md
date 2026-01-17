@@ -6,9 +6,27 @@ The goal of this repository is to explore and compare various methods for accele
 
 ## The Problem: N-Body Simulation
 
-An N-body simulation calculates the gravitational interaction between $N$ bodies. The computational complexity of the naive algorithm is $O(N^2)$, making it computationally expensive and a perfect candidate for optimization.
+An [N-body simulation](https://en.wikipedia.org/wiki/N-body_simulation) calculates the gravitational interaction between $N$ bodies. The computational complexity of the naive algorithm is $O(N^2)$, making it computationally expensive and a perfect candidate for optimization.
 
 We simulate particles in a 3D space, calculating forces, velocities, and positions at each time step.
+
+### Simplified Core Logic (Python)
+
+```python
+# 1. Update velocities based on forces
+for a in bodies:
+    for b in bodies:
+        if a is b: continue
+        
+        dx, dy, dz = b.x-a.x, b.y-a.y, b.z-a.z
+        f = b.mass / (dx**2 + dy**2 + dz**2)**1.5 * dt
+        
+        a.vx += dx * f; a.vy += dy * f; a.vz += dz * f
+
+# 2. Update positions
+for a in bodies:
+    a.x += a.vx * dt; a.y += a.vy * dt; a.z += a.vz * dt
+```
 
 ## Implementations
 
