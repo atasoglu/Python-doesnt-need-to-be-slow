@@ -25,16 +25,22 @@ We have implemented the simulation using the following technologies:
 3.  **Numba**
     - JIT (Just-In-Time) compiler that translates Python functions to optimized machine code.
     - *Pros*: near-native speed with minimal code changes.
-4.  **Taichi Lang**
+4.  **JAX**
+    - Google's NumPy-compatible library with JIT compilation and functional programming.
+    - *Pros*: XLA compilation, automatic vectorization, functional approach, GPU support.
+5.  **Taichi Lang**
     - A high-performance compiler for computer graphics and simulation.
     - *Pros*: extremely fast, parallelizes on CPU/GPU automatically.
-5.  **Cython**
+6.  **Cython**
     - Compiles Python-like code to C extensions.
     - *Pros*: robust, widely used. *Cons*: requires separate build step.
-6.  **MyPyc**
+7.  **MyPyc**
     - MyPy's compiler that translates type-annotated Python to C extensions.
     - *Pros*: significant speedup with minimal code changes, leverages existing type hints.
-7.  **Multiprocessing**
+8.  **PyPy**
+    - Alternative Python implementation with a JIT (Just-In-Time) compiler.
+    - *Pros*: significant speedup for pure Python code with no code changes required.
+9.  **Multiprocessing**
     - Uses multiple CPU cores to parallelize the workload.
     - *Pros*: utilizes hardware. *Cons*: high overhead for process communication.
 
@@ -45,6 +51,7 @@ These serve as the "speed limit" to see how close our Python optimizations can g
 - **Rust**
 - **C**
 - **C++**
+- **Go**
 
 ## How to Run
 

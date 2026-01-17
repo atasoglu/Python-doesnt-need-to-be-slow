@@ -7,16 +7,16 @@
   },
   "benchmarks": [
     {
-      "method": "Rust (Native)",
+      "method": "Go (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0018
+      "time": 0.0031
     },
     {
-      "method": "Rust (Native)",
+      "method": "Go (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.182
+      "time": 0.2946
     }
   ]
 }

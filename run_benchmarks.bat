@@ -72,6 +72,27 @@ docker run --rm -v %cd%/results:/app/results nbody-rust
 
 echo.
 echo ==========================================
+echo Building and Running Go Benchmarks...
+echo ==========================================
+set SHOULD_BUILD=0
+if "%FORCE_BUILD%"=="1" (
+    set SHOULD_BUILD=1
+) else (
+    docker image inspect nbody-go >nul 2>&1
+    if %ERRORLEVEL% NEQ 0 set SHOULD_BUILD=1
+)
+
+if "%SHOULD_BUILD%"=="0" (
+    echo Image nbody-go found, skipping build.
+) else (
+    echo Building nbody-go...
+    docker build -f docker/go.Dockerfile -t nbody-go .
+    if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+)
+docker run --rm -v %cd%/results:/app/results nbody-go
+
+echo.
+echo ==========================================
 echo All Benchmarks Completed!
 echo Results saved to results/latest_run.json
 echo ==========================================

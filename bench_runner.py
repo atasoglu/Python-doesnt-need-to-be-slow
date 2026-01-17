@@ -60,7 +60,7 @@ def run_benchmark(command, name, n, steps):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run N-body benchmarks")
-    parser.add_argument("--type", choices=["all", "python", "c_cpp", "rust"], default="all", help="Type of benchmarks to run")
+    parser.add_argument("--type", choices=["all", "python", "c_cpp", "rust", "go"], default="all", help="Type of benchmarks to run")
     parser.add_argument("--n", type=int, nargs="+", default=[100, 1000], help="N values to test")
     parser.add_argument("--steps", type=int, default=50, help="Number of steps")
     args = parser.parse_args()
@@ -75,14 +75,17 @@ if __name__ == "__main__":
         (["python", "src/python/baseline.py"], "Vanilla Python", "python"),
         (["python", "src/python/numpy_impl.py"], "NumPy", "python"),
         (["python", "src/python/numba_impl.py"], "Numba", "python"),
+        (["python", "src/python/jax_impl.py"], "JAX", "python"),
         (["python", "src/python/taichi_impl.py"], "Taichi", "python"),
         (["python", "src/python/cython_runner.py"], "Cython", "python"),
         (["python", "src/python/mypyc_runner.py"], "MyPyc", "python"),
         (["python", "src/python/mp_impl.py"], "Multiprocessing", "python"),
+        (["pypy3", "src/python/baseline.py"], "PyPy", "python"),
         # Native binaries
         (["src/rust_impl/target/release/nbody_rust.exe"] if os.name == 'nt' else ["./src/rust_impl/target/release/nbody_rust"], "Rust (Native)", "rust"),
         (["src/c_impl/nbody.exe"] if os.name == 'nt' else ["./src/c_impl/nbody"], "C (Native)", "c_cpp"),
         (["src/cpp_impl/nbody.exe"] if os.name == 'nt' else ["./src/cpp_impl/nbody"], "C++ (Native)", "c_cpp"),
+        (["src/go_impl/nbody_go.exe"] if os.name == 'nt' else ["./src/go_impl/nbody_go"], "Go (Native)", "go"),
     ]
     
     # Filter implementations
