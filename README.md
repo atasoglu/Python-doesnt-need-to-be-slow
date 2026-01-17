@@ -10,6 +10,18 @@ An [N-body simulation](https://en.wikipedia.org/wiki/N-body_simulation) calculat
 
 We simulate particles in a 3D space, calculating forces, velocities, and positions at each time step.
 
+### Complexity & Parallelism
+
+The naive pairwise approach involves $O(N^2)$ calculations. As $N$ grows, the workload increases quadratically (doubling $N$ means $4\times$ the work).
+
+*   **Serial Execution**: Inefficient for large $N$. Performance is strictly bound by single-core clock speed and instruction throughput.
+*   **Parallel Execution**: The problem is "embarrassingly parallel" because the force on each body is independent of the others for a given step. Using multi-core CPUs or thousands of GPU cores allows for massive speedups, especially as $N$ becomes large enough to saturate the hardware.
+
+**Behavior at Different Scales:**
+
+*   **Small N**: For small inputs, the overhead of managing threads (Multiprocessing) or transferring data to GPU (CUDA) often outweighs the computational benefits. In these cases, optimized **Serial** or **Vectorized** (NumPy) implementations may actually be faster.
+*   **Large N**: As $N$ increases, the $O(N^2)$ complexity dominates. Serial implementations slow down drastically. **Parallel** implementations shine here, as they can distribute the massive calculation load across many cores, making the overhead negligible compared to the computation time.
+
 ### Simplified Core Logic (Python)
 
 ```python
@@ -42,13 +54,13 @@ We have implemented the simulation using the following technologies:
     - *Pros*: cleaner code, significant speedup.
 3.  **Numba**
     - JIT (Just-In-Time) compiler that translates Python functions to optimized machine code.
-    - *Pros*: near-native speed with minimal code changes.
+    - *Pros*: near-native speed, supports **automatic multi-core parallelism** (CPU) with simple flags.
 4.  **JAX**
     - Google's NumPy-compatible library with JIT compilation and functional programming.
-    - *Pros*: XLA compilation, automatic vectorization, functional approach, GPU support.
+    - *Pros*: XLA compilation, supports **automatic vectorization & parallelism** (SIMD/Multi-device), GPU support.
 5.  **Taichi Lang**
     - A high-performance compiler for computer graphics and simulation.
-    - *Pros*: extremely fast, parallelizes on CPU/GPU automatically.
+    - *Pros*: extremely fast, **automatically parallelizes** workloads across all available CPU cores or GPU.
 6.  **Cython**
     - Compiles Python-like code to C extensions.
     - *Pros*: robust, widely used. *Cons*: requires separate build step.
