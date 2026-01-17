@@ -3,80 +3,92 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": ""
+    "processor": "AMD Ryzen 7 6800H with Radeon Graphics"
   },
   "benchmarks": [
     {
       "method": "Vanilla Python",
       "n": 100,
       "steps": 50,
-      "time": 0.245330810546875
+      "time": 0.12355828285217285
     },
     {
       "method": "NumPy",
       "n": 100,
       "steps": 50,
-      "time": 0.056622982025146484
+      "time": 0.02199697494506836
     },
     {
       "method": "Numba",
       "n": 100,
       "steps": 50,
-      "time": 0.013603925704956055
+      "time": 0.004729509353637695
     },
     {
       "method": "Taichi",
       "n": 100,
       "steps": 50,
-      "time": 0.04321408271789551
+      "time": 0.013975858688354492
     },
     {
       "method": "Cython",
       "n": 100,
       "steps": 50,
-      "time": 0.003484010696411133
+      "time": 0.0016825199127197266
+    },
+    {
+      "method": "MyPyc",
+      "n": 100,
+      "steps": 50,
+      "time": 0.1095266342163086
     },
     {
       "method": "Multiprocessing",
       "n": 100,
       "steps": 50,
-      "time": 0.49036312103271484
+      "time": 0.20698070526123047
     },
     {
       "method": "Vanilla Python",
       "n": 1000,
       "steps": 50,
-      "time": 22.05091404914856
+      "time": 11.373467445373535
     },
     {
       "method": "NumPy",
       "n": 1000,
       "steps": 50,
-      "time": 5.322709560394287
+      "time": 3.2127885818481445
     },
     {
       "method": "Numba",
       "n": 1000,
       "steps": 50,
-      "time": 0.10696148872375488
+      "time": 0.035083770751953125
     },
     {
       "method": "Taichi",
       "n": 1000,
       "steps": 50,
-      "time": 0.21573305130004883
+      "time": 0.11405158042907715
     },
     {
       "method": "Cython",
       "n": 1000,
       "steps": 50,
-      "time": 0.35738468170166016
+      "time": 0.16782736778259277
+    },
+    {
+      "method": "MyPyc",
+      "n": 1000,
+      "steps": 50,
+      "time": 11.209823608398438
     },
     {
       "method": "Multiprocessing",
       "n": 1000,
       "steps": 50,
-      "time": 5.487266778945923
+      "time": 3.161839246749878
     }
   ]
 }

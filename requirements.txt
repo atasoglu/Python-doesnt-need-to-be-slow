@@ -2,6 +2,7 @@ numpy
 numba
 cython
 taichi
+mypy
 maturin
 patchelf
 tbb

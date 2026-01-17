@@ -2,9 +2,10 @@ import argparse
 import random
 import time
 import math
+from typing import List
 
 class Planet:
-    def __init__(self, x, y, z, vx, vy, vz, mass):
+    def __init__(self, x: float, y: float, z: float, vx: float, vy: float, vz: float, mass: float) -> None:
         self.x = x
         self.y = y
         self.z = z
@@ -13,7 +14,7 @@ class Planet:
         self.vz = vz
         self.mass = mass
 
-def compute_forces(planets, dt, soft_epsilon=1e-9):
+def compute_forces(planets: List[Planet], dt: float, soft_epsilon: float = 1e-9) -> None:
     # This is the O(N^2) part
     n = len(planets)
     for i in range(n):
@@ -40,15 +41,15 @@ def compute_forces(planets, dt, soft_epsilon=1e-9):
         p1.vy += fy * dt
         p1.vz += fz * dt
 
-def update_positions(planets, dt):
+def update_positions(planets: List[Planet], dt: float) -> None:
     # Update positions (semi-implicit Euler part 2)
     for p in planets:
         p.x += p.vx * dt
         p.y += p.vy * dt
         p.z += p.vz * dt
 
-def run_simulation(n_bodies, n_steps, dt=0.01):
-    planets = []
+def run_simulation(n_bodies: int, n_steps: int, dt: float = 0.01) -> float:
+    planets: List[Planet] = []
     # Initialize random planets
     random.seed(42)
     for _ in range(n_bodies):

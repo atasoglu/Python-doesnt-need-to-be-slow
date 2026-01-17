@@ -77,6 +77,7 @@ if __name__ == "__main__":
         (["python", "src/python/numba_impl.py"], "Numba", "python"),
         (["python", "src/python/taichi_impl.py"], "Taichi", "python"),
         (["python", "src/python/cython_runner.py"], "Cython", "python"),
+        (["python", "src/python/mypyc_runner.py"], "MyPyc", "python"),
         (["python", "src/python/mp_impl.py"], "Multiprocessing", "python"),
         # Native binaries
         (["src/rust_impl/target/release/nbody_rust.exe"] if os.name == 'nt' else ["./src/rust_impl/target/release/nbody_rust"], "Rust (Native)", "rust"),

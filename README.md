@@ -31,7 +31,10 @@ We have implemented the simulation using the following technologies:
 5.  **Cython**
     - Compiles Python-like code to C extensions.
     - *Pros*: robust, widely used. *Cons*: requires separate build step.
-6.  **Multiprocessing**
+6.  **MyPyc**
+    - MyPy's compiler that translates type-annotated Python to C extensions.
+    - *Pros*: significant speedup with minimal code changes, leverages existing type hints.
+7.  **Multiprocessing**
     - Uses multiple CPU cores to parallelize the workload.
     - *Pros*: utilizes hardware. *Cons*: high overhead for process communication.
 

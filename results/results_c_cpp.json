@@ -3,32 +3,32 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": ""
+    "processor": "AMD Ryzen 7 6800H with Radeon Graphics"
   },
   "benchmarks": [
     {
       "method": "C (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.0038
+      "time": 0.0024
     },
     {
       "method": "C++ (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.00389286
+      "time": 0.0023463
     },
     {
       "method": "C (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.3582
+      "time": 0.1946
     },
     {
       "method": "C++ (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.370637
+      "time": 0.187197
     }
   ]
 }

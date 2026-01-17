@@ -3,20 +3,20 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": ""
+    "processor": "AMD Ryzen 7 6800H with Radeon Graphics"
   },
   "benchmarks": [
     {
       "method": "Rust (Native)",
       "n": 100,
       "steps": 50,
-      "time": 0.1009
+      "time": 0.0018
     },
     {
       "method": "Rust (Native)",
       "n": 1000,
       "steps": 50,
-      "time": 0.1462
+      "time": 0.1814
     }
   ]
 }
