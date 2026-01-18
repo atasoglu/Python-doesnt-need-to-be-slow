@@ -9,7 +9,7 @@ from setuptools import setup
 setup(
     name="nbody_mypyc",
     ext_modules=mypycify([
-        "baseline.py"
+        "mypyc_impl.py"
     ]),
     zip_safe=False,
 )

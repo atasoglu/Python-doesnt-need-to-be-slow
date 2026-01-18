@@ -14,8 +14,8 @@ def compile_mypyc():
     
     # Check if compiled module exists
     import glob
-    compiled_files = glob.glob(os.path.join(current_dir, "baseline*.so")) + \
-                    glob.glob(os.path.join(current_dir, "baseline*.pyd"))
+    compiled_files = glob.glob(os.path.join(current_dir, "mypyc_impl*.so")) + \
+                    glob.glob(os.path.join(current_dir, "mypyc_impl*.pyd"))
     
     if not compiled_files:
         print("Compiling MyPyc implementation...")
@@ -52,9 +52,9 @@ def main():
     
     # Import and run the compiled module
     try:
-        import baseline
+        import mypyc_impl
         # Call run_simulation directly from compiled module
-        duration = baseline.run_simulation(args.n, args.steps)
+        duration = mypyc_impl.run_simulation(args.n, args.steps)
         print(f"RESULT: {duration}")
     except ImportError:
         print("Failed to import compiled module, falling back to regular Python")

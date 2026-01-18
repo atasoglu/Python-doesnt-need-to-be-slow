@@ -90,8 +90,8 @@ def run_benchmark(command, name, n, steps):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run N-body benchmarks")
     parser.add_argument("--type", choices=["all", "python", "c_cpp", "rust", "go", "cuda"], default="all", help="Type of benchmarks to run")
-    parser.add_argument("--n", type=int, nargs="+", default=[100, 1000], help="N values to test")
-    parser.add_argument("--steps", type=int, default=50, help="Number of steps")
+    parser.add_argument("--n", type=int, nargs="+", default=[1000, 5000], help="N values to test")
+    parser.add_argument("--steps", type=int, default=100, help="Number of steps")
     args = parser.parse_args()
 
     # Configuration
