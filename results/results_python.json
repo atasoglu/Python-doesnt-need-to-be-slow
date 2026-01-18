@@ -3,130 +3,130 @@
     "os": "Linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.11.14",
-    "processor": "AMD Ryzen 7 6800H with Radeon Graphics",
-    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU, 6144 MiB",
+    "processor": "AMD Ryzen 5 7500F 6-Core Processor",
+    "gpu": "NVIDIA GeForce RTX 5070, 12227 MiB",
     "cuda_version": "Cuda compilation tools, release 11.8, V11.8.89"
   },
   "benchmarks": [
     {
       "method": "Vanilla Python",
-      "n": 100,
-      "steps": 50,
-      "time": 0.21840310096740723
+      "n": 1000,
+      "steps": 100,
+      "time": 16.283696174621582
     },
     {
       "method": "NumPy",
-      "n": 100,
-      "steps": 50,
-      "time": 0.04395866394042969
+      "n": 1000,
+      "steps": 100,
+      "time": 4.07542085647583
     },
     {
       "method": "Numba",
-      "n": 100,
-      "steps": 50,
-      "time": 0.008685111999511719
+      "n": 1000,
+      "steps": 100,
+      "time": 0.07815718650817871
     },
     {
       "method": "JAX",
-      "n": 100,
-      "steps": 50,
-      "time": 0.11672616004943848
+      "n": 1000,
+      "steps": 100,
+      "time": 0.1361098289489746
     },
     {
       "method": "Taichi",
-      "n": 100,
-      "steps": 50,
-      "time": 0.04786229133605957
+      "n": 1000,
+      "steps": 100,
+      "time": 0.2047748565673828
     },
     {
       "method": "Cython",
-      "n": 100,
-      "steps": 50,
-      "time": 0.0061681270599365234
+      "n": 1000,
+      "steps": 100,
+      "time": 0.3424668312072754
     },
     {
       "method": "MyPyc",
-      "n": 100,
-      "steps": 50,
-      "time": 0.2270500659942627
+      "n": 1000,
+      "steps": 100,
+      "time": 0.4747614860534668
     },
     {
       "method": "CUDA Python",
-      "n": 100,
-      "steps": 50,
-      "time": 0.011020183563232422
+      "n": 1000,
+      "steps": 100,
+      "time": 0.12778353691101074
     },
     {
       "method": "Multiprocessing",
-      "n": 100,
-      "steps": 50,
-      "time": 0.5195612907409668
+      "n": 1000,
+      "steps": 100,
+      "time": 4.194056510925293
     },
     {
       "method": "PyPy",
-      "n": 100,
-      "steps": 50,
-      "time": 0.01584339141845703
+      "n": 1000,
+      "steps": 100,
+      "time": 0.4685075283050537
     },
     {
       "method": "Vanilla Python",
-      "n": 1000,
-      "steps": 50,
-      "time": 23.805495023727417
+      "n": 5000,
+      "steps": 100,
+      "time": 404.90295934677124
     },
     {
       "method": "NumPy",
-      "n": 1000,
-      "steps": 50,
-      "time": 5.833648920059204
+      "n": 5000,
+      "steps": 100,
+      "time": 101.26278614997864
     },
     {
       "method": "Numba",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.10117030143737793
+      "n": 5000,
+      "steps": 100,
+      "time": 1.5439386367797852
     },
     {
       "method": "JAX",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.35595011711120605
+      "n": 5000,
+      "steps": 100,
+      "time": 7.269068241119385
     },
     {
       "method": "Taichi",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.2126636505126953
+      "n": 5000,
+      "steps": 100,
+      "time": 1.6182701587677002
     },
     {
       "method": "Cython",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.368833065032959
+      "n": 5000,
+      "steps": 100,
+      "time": 7.313657999038696
     },
     {
       "method": "MyPyc",
-      "n": 1000,
-      "steps": 50,
-      "time": 23.199541568756104
+      "n": 5000,
+      "steps": 100,
+      "time": 11.90078854560852
     },
     {
       "method": "CUDA Python",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.19476032257080078
+      "n": 5000,
+      "steps": 100,
+      "time": 0.6363332271575928
     },
     {
       "method": "Multiprocessing",
-      "n": 1000,
-      "steps": 50,
-      "time": 5.200041770935059
+      "n": 5000,
+      "steps": 100,
+      "time": 88.12863993644714
     },
     {
       "method": "PyPy",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.7267904281616211
+      "n": 5000,
+      "steps": 100,
+      "time": 11.669776201248169
     }
   ]
 }

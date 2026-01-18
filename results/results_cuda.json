@@ -4,21 +4,21 @@
     "release": "6.6.87.2-microsoft-standard-WSL2",
     "python": "3.10.12",
     "processor": "x86_64",
-    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU, 6144 MiB",
+    "gpu": "NVIDIA GeForce RTX 5070, 12227 MiB",
     "cuda_version": "Unknown (nvcc not found)"
   },
   "benchmarks": [
     {
       "method": "CUDA",
-      "n": 100,
-      "steps": 50,
-      "time": 0.3147
+      "n": 1000,
+      "steps": 100,
+      "time": 0.1773
     },
     {
       "method": "CUDA",
-      "n": 1000,
-      "steps": 50,
-      "time": 0.0167
+      "n": 5000,
+      "steps": 100,
+      "time": 0.0638
     }
   ]
 }
